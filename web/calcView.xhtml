@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head> 
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+
+        <h:form>
+            Fator1<p:inputText id="fator1" value ="#{calcBean.calc.fator1}"/>
+            Fator2<p:inputText id="fator2" value ="#{calcBean.calc.fator2}"/>
+            Número<p:inputText id="resultado" value ="#{calcBean.calc.resultado}"/>
+            <p:commandButton value="Calcular" action="#{calcBean.calcula()}"  update="@form"  />
+
+            <h3 style="margin-top:0">Basic</h3>
+            <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                <p:outputLabel for="console" value="Console:" />
+                <p:selectOneRadio id="console" value="#{calcBean.calc.operacao}"  >
+                    <f:selectItem itemLabel="Soma" itemValue="soma" />
+                    <f:selectItem itemLabel="Subtração" itemValue="subtração" />
+                    <f:selectItem itemLabel="Multiplicação" itemValue="multiplicação" />
+                    <f:selectItem itemLabel="Divisão" itemValue="divisão" />
+                    <f:selectItem itemLabel="Raiz quadrada" itemValue="raiz" />
+
+                </p:selectOneRadio>
+            </h:panelGrid>
+        </h:form>
+
+
+
+    </h:body>
+</html>
+
